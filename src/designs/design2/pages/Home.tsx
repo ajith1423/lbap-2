@@ -50,11 +50,11 @@ const Home = () => {
       <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#0B96AC]">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1565173153515-05e83693e506?q=80&w=2000&auto=format&fit=crop" 
-            alt="Robotic Manufacturing" 
-            className="w-full h-full object-cover brightness-[0.4]"
+            src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=2000" 
+            alt="Precision Industrial Robotic Arm" 
+            className="w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B96AC] via-[#0B96AC]/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B96AC] via-[#0B96AC]/40 to-[#0B96AC]/10"></div>
         </div>
 
         <div className="w-full px-8 lg:px-20 relative z-10">
