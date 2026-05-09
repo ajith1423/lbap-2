@@ -4,8 +4,8 @@ import { MapPin, Mail, Phone, Clock } from 'lucide-react';
 const Footer = () => {
   return (
     <footer className="w-full">
-      {/* Top Blue Border */}
-      <div className="h-[5px] bg-[#00A3FF] w-full"></div>
+      {/* Top Ash Line */}
+      <div className="h-[1px] bg-slate-200 w-full"></div>
       
       <div className="bg-[#F8FAFC] pt-16 pb-8">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-20">

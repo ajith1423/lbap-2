@@ -21,30 +21,8 @@ const Home = () => {
   return (
     <div className="bg-white text-slate-900 font-['Outfit'] selection:bg-[#0B96AC]/20">
       
-      {/* --- Navigation --- */}
-      <nav className="absolute top-0 w-full z-50 py-8">
-        <div className="container-custom flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#0B96AC] flex items-center justify-center">
-              <span className="font-bold text-lg text-white">LB</span>
-            </div>
-            <span className="font-bold tracking-tighter text-xl uppercase text-white">Laxmi Balaji</span>
-          </div>
-          <div className="hidden lg:flex items-center gap-8 text-[12px] font-bold tracking-widest uppercase text-white/80">
-            <a href="/" className="hover:text-white transition-colors">Home</a>
-            <a href="/about" className="hover:text-white transition-colors">About Us</a>
-            <a href="/product" className="hover:text-white transition-colors">Product</a>
-            <a href="/machineries" className="hover:text-white transition-colors">Machineries</a>
-            <a href="/csr" className="hover:text-white transition-colors">CSR</a>
-            <a href="/gallery" className="hover:text-white transition-colors">Gallery</a>
-            <a href="/career" className="hover:text-white transition-colors">Career</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact Us</a>
-          </div>
-          <button className="bg-[#0B96AC] text-white px-8 py-3 text-[11px] font-bold uppercase tracking-widest hover:bg-[#097b8e] transition-all">
-            Request Quote
-          </button>
-        </div>
-      </nav>
+      
+      {/* --- 1. Hero Section --- */}
 
       {/* --- 1. Hero Section --- */}
       <section className="relative h-[85vh] flex items-center overflow-hidden bg-[#0B96AC]">
@@ -52,9 +30,9 @@ const Home = () => {
           <img 
             src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=2000" 
             alt="Precision Industrial Robotic Arm" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover grayscale brightness-[0.4]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B96AC] via-[#0B96AC]/40 to-[#0B96AC]/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A0D12] via-[#0A0D12]/80 to-transparent"></div>
         </div>
 
         <div className="w-full px-8 lg:px-20 relative z-10">
@@ -68,7 +46,7 @@ const Home = () => {
                <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">ESTABLISHED 1994</span>
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-8 tracking-tighter max-w-2xl">
-              Engineering the Future of Automotive Components.
+              Engineering the Future of <span className="text-[#0B96AC]">Automotive Components.</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-[17px] text-slate-300 max-w-xl leading-relaxed mb-12 font-medium">
               Advanced sheet metal fabrication and precision manufacturing for global automotive leaders.
@@ -86,10 +64,10 @@ const Home = () => {
         </div>
 
         {/* Floating Production Info */}
-        <div className="absolute bottom-12 right-12 hidden lg:block">
-          <div className="p-8 bg-[#1A1F26]/80 border border-white/10 shadow-2xl max-w-[320px] backdrop-blur-lg">
-            <h4 className="text-[#0B96AC] font-bold text-[11px] uppercase tracking-widest mb-3">Live Production Feed</h4>
-            <p className="text-[13px] text-white/70 leading-relaxed font-medium">
+        <div className="absolute bottom-0 right-20 hidden lg:block z-20">
+          <div className="p-10 bg-white shadow-[0_-10px_30px_rgba(0,0,0,0.1)] max-w-[340px] rounded-t-sm border-x border-t border-[#E5E9F0]">
+            <h4 className="text-[#0B96AC] font-bold text-[11px] uppercase tracking-widest mb-4">Live Production Feed</h4>
+            <p className="text-[14px] text-slate-600 leading-relaxed font-semibold">
               L97 #6254 currently in Final Assembly. Quality Check: Passed.
             </p>
           </div>
@@ -183,7 +161,7 @@ const Home = () => {
       </section>
 
       {/* --- 4. Mass Production Section --- */}
-      <section className="bg-[#122A30] py-20 text-white">
+      <section className="bg-[#0B96AC] py-20 text-white">
         <div className="w-full px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
@@ -194,8 +172,8 @@ const Home = () => {
             <h2 className="text-[28px] font-bold tracking-tight mb-10 text-white leading-tight">Mass Production Without Compromise.</h2>
             <div className="space-y-10">
               <div className="flex gap-8">
-                <div className="w-10 h-10 bg-[#0B96AC]/20 border border-[#0B96AC]/40 flex items-center justify-center shrink-0">
-                   <Settings className="w-5 h-5 text-[#0B96AC]" />
+                <div className="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                   <Settings className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h4 className="text-[16px] font-bold mb-2 uppercase tracking-tight">120,000 Sq Ft Facility</h4>
@@ -205,8 +183,8 @@ const Home = () => {
                 </div>
               </div>
               <div className="flex gap-8">
-                <div className="w-10 h-10 bg-[#0B96AC]/20 border border-[#0B96AC]/40 flex items-center justify-center shrink-0">
-                   <Cpu className="w-5 h-5 text-[#0B96AC]" />
+                <div className="w-10 h-10 bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                   <Cpu className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <h4 className="text-[16px] font-bold mb-2 uppercase tracking-tight">Smart Logic Integration</h4>
@@ -251,7 +229,7 @@ const Home = () => {
               { label: "COUNTRIES SERVED", value: "12+" }
             ].map((stat, i) => (
               <div key={i} className="border-l border-[#E5E9F0] pl-10">
-                <h3 className="text-4xl font-black mb-2 text-[#1A1A1A] tracking-tighter">{stat.value}</h3>
+                <h3 className="text-4xl font-black mb-2 text-[#0B96AC] tracking-tighter">{stat.value}</h3>
                 <p className="text-[9px] font-bold uppercase tracking-widest text-[#8E99AF]">{stat.label}</p>
               </div>
             ))}
@@ -285,7 +263,7 @@ const Home = () => {
               <h2 className="text-[24px] font-bold text-[#1A1A1A] mb-10 tracking-tight">Machinery Specification</h2>
               <div className="overflow-hidden border border-[#E5E9F0] rounded-sm bg-white shadow-sm">
                 <table className="w-full text-left">
-                  <thead className="bg-[#122A30] text-white">
+                  <thead className="bg-[#0B96AC] text-white">
                     <tr>
                       <th className="p-6 text-[11px] font-bold tracking-widest uppercase">EQUIPMENT</th>
                       <th className="p-6 text-[11px] font-bold tracking-widest uppercase">CAPACITY</th>
