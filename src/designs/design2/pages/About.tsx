@@ -43,7 +43,12 @@ const About = () => {
         </div>
 
         <div className="w-full px-8 lg:px-20 relative z-10">
-          <div className="max-w-4xl">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="max-w-4xl"
+          >
             <div className="inline-block bg-[#0B96AC] px-3 py-1 mb-6">
                <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">STRATEGIC SCALE</span>
             </div>
@@ -53,7 +58,7 @@ const About = () => {
             <p className="text-[17px] text-slate-300 max-w-2xl leading-relaxed font-medium">
               LBAP leads the automotive manufacturing sector through a synergy of massive industrial footprint and clinical engineering precision. Our infrastructure is designed for limitless growth.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -134,11 +139,19 @@ const About = () => {
                { year: "2014", title: "Global Integration", desc: "Secured first international export contract with a European EV manufacturer, launching our global footprint." },
                { year: "2024", title: "Autonomous Era", desc: "Implementation of AI-driven quality control and 100% automated robotics across all primary lines." }
              ].map((item, idx) => (
-               <div key={idx} className="p-8 bg-white border border-[#E5E9F0] shadow-sm hover:border-[#0B96AC]/30 transition-all group">
+               <motion.div 
+                 key={idx} 
+                 initial={{ opacity: 0, y: 20 }}
+                 whileInView={{ opacity: 1, y: 0 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: idx * 0.1 }}
+                 whileHover={{ y: -5 }}
+                 className="p-8 bg-white border border-[#E5E9F0] shadow-sm hover:border-[#0B96AC]/30 transition-all group"
+               >
                   <span className="text-[28px] font-black text-[#0B96AC] block mb-6">{item.year}</span>
                   <h4 className="text-[16px] font-bold text-[#1A1A1A] mb-3 uppercase tracking-tight">{item.title}</h4>
                   <p className="text-[14px] text-[#595959] leading-relaxed font-medium">{item.desc}</p>
-               </div>
+               </motion.div>
              ))}
           </div>
         </div>
@@ -192,7 +205,14 @@ const About = () => {
                { name: "Ananya Singh", role: "CHIEF OPERATIONS OFFICER", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" },
                { name: "Dr. Rajesh Iyer", role: "CHIEF TECHNOLOGY OFFICER", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop" }
              ].map((leader, i) => (
-               <div key={i} className="relative group h-[500px] overflow-hidden rounded-sm shadow-lg">
+               <motion.div 
+                 key={i} 
+                 initial={{ opacity: 0, scale: 0.95 }}
+                 whileInView={{ opacity: 1, scale: 1 }}
+                 viewport={{ once: true }}
+                 transition={{ delay: i * 0.1 }}
+                 className="relative group h-[500px] overflow-hidden rounded-sm shadow-lg"
+               >
                   <img src={leader.img} alt={leader.name} className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-1000" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                   <div className="absolute bottom-8 left-8">
@@ -202,7 +222,7 @@ const About = () => {
                         <div className="w-2 h-2 bg-white rounded-full"></div> WATCH INTRODUCTION
                      </button>
                   </div>
-               </div>
+               </motion.div>
              ))}
           </div>
         </div>

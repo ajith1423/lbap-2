@@ -58,26 +58,31 @@ const Home = () => {
         </div>
 
         <div className="w-full px-8 lg:px-20 relative z-10">
-          <div className="max-w-4xl">
-            <div className="inline-block bg-white/10 backdrop-blur-md px-3 py-1 mb-8 border border-white/20">
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="max-w-4xl"
+          >
+            <motion.div variants={fadeInUp} className="inline-block bg-white/10 backdrop-blur-md px-3 py-1 mb-8 border border-white/20">
                <span className="text-white text-[10px] font-bold tracking-[0.2em] uppercase">ESTABLISHED 1994</span>
-            </div>
-            <h1 className="text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-8 tracking-tighter max-w-2xl">
+            </motion.div>
+            <motion.h1 variants={fadeInUp} className="text-4xl lg:text-5xl font-black text-white leading-[1.1] mb-8 tracking-tighter max-w-2xl">
               Engineering the Future of Automotive Components.
-            </h1>
-            <p className="text-[17px] text-slate-300 max-w-xl leading-relaxed mb-12 font-medium">
+            </motion.h1>
+            <motion.p variants={fadeInUp} className="text-[17px] text-slate-300 max-w-xl leading-relaxed mb-12 font-medium">
               Advanced sheet metal fabrication and precision manufacturing for global automotive leaders.
-            </p>
+            </motion.p>
             
-            <div className="flex flex-wrap gap-5">
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-5">
               <button className="bg-white text-[#0B96AC] px-10 py-4 font-bold text-[12px] tracking-widest hover:bg-slate-100 transition-all uppercase">
                 Explore Solutions
               </button>
               <button className="border border-white/40 text-white px-10 py-4 font-bold text-[12px] tracking-widest hover:bg-white/10 transition-all uppercase">
                 Technical Data
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Floating Production Info */}
@@ -106,69 +111,86 @@ const Home = () => {
       {/* --- 3. Core Capabilities --- */}
       <section className="py-20 bg-white">
         <div className="w-full px-8 lg:px-20">
-          <div className="flex justify-between items-end mb-20">
-            <div>
-              <h4 className="text-[#0B96AC] font-bold text-[9px] uppercase tracking-[0.4em] mb-4">CORE CAPABILITIES</h4>
-              <h2 className="text-[28px] font-bold tracking-tight text-[#1A1A1A]">Precision at Scale. Rigor at Volume.</h2>
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={staggerContainer}
+          >
+            <div className="flex justify-between items-end mb-20">
+              <motion.div variants={fadeInUp}>
+                <h4 className="text-[#0B96AC] font-bold text-[9px] uppercase tracking-[0.4em] mb-4">CORE CAPABILITIES</h4>
+                <h2 className="text-[28px] font-bold tracking-tight text-[#1A1A1A]">Precision at Scale. Rigor at Volume.</h2>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="hidden md:block text-[14px] font-bold tracking-widest text-[#8E99AF]">001 — 003</motion.div>
             </div>
-            <div className="hidden md:block text-[14px] font-bold tracking-widest text-[#8E99AF]">001 — 003</div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: Cpu, 
-                title: "Sheet Metal Fabrication", 
-                desc: "Our high-speed CNC pressing and automated folding lines handle complex geometries with tolerances within 0.05mm.",
-                stats: [
-                  { label: "CAPACITY", val: "100,000 UNITS" },
-                  { label: "MATERIAL", val: "ALL GRADES CRCA" }
-                ]
-              },
-              { 
-                icon: Settings, 
-                title: "Heavy Fabrication", 
-                desc: "Specialized robotic welding cells for chassis components, engine mounts, and structural reinforcements.",
-                stats: [
-                  { label: "AUTOMATION", val: "100% ROBOTIC" },
-                  { label: "COMPLIANCE", val: "ISO 9001:2015" }
-                ]
-              },
-              { 
-                icon: Box, 
-                title: "Press Components", 
-                desc: "Integrated clean-room capabilities for progressive die manufacturing and high-volume component stamping.",
-                stats: [
-                  { label: "PRODUCTION", val: "40,000 UNITS/DAY" },
-                  { label: "MAX VOL", val: "PROG DIE + MANUAL" }
-                ]
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="p-10 bg-[#F8FAFC] border border-[#E5E9F0] hover:border-[#0B96AC] transition-all group rounded-sm shadow-sm">
-                <div className="mb-8">
-                  <item.icon className="w-6 h-6 text-[#0B96AC]" />
-                </div>
-                <h3 className="text-[18px] font-bold mb-4 text-[#1A1A1A] tracking-tight">{item.title}</h3>
-                <p className="text-[#595959] text-[14px] leading-relaxed mb-10 font-medium">{item.desc}</p>
-                
-                <div className="pt-8 border-t border-slate-200 flex justify-between gap-4">
-                  {item.stats.map((s, i) => (
-                    <div key={i}>
-                      <p className="text-[9px] font-bold text-[#8E99AF] tracking-widest mb-1 uppercase">{s.label}</p>
-                      <p className="text-[12px] font-bold text-[#1A1A1A]">{s.val}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { 
+                  icon: Cpu, 
+                  title: "Sheet Metal Fabrication", 
+                  desc: "Our high-speed CNC pressing and automated folding lines handle complex geometries with tolerances within 0.05mm.",
+                  stats: [
+                    { label: "CAPACITY", val: "100,000 UNITS" },
+                    { label: "MATERIAL", val: "ALL GRADES CRCA" }
+                  ]
+                },
+                { 
+                  icon: Settings, 
+                  title: "Heavy Fabrication", 
+                  desc: "Specialized robotic welding cells for chassis components, engine mounts, and structural reinforcements.",
+                  stats: [
+                    { label: "AUTOMATION", val: "100% ROBOTIC" },
+                    { label: "COMPLIANCE", val: "ISO 9001:2015" }
+                  ]
+                },
+                { 
+                  icon: Box, 
+                  title: "Press Components", 
+                  desc: "Integrated clean-room capabilities for progressive die manufacturing and high-volume component stamping.",
+                  stats: [
+                    { label: "PRODUCTION", val: "40,000 UNITS/DAY" },
+                    { label: "MAX VOL", val: "PROG DIE + MANUAL" }
+                  ]
+                }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx} 
+                  variants={fadeInUp}
+                  whileHover={{ y: -10, transition: { duration: 0.3 } }}
+                  className="p-10 bg-[#F8FAFC] border border-[#E5E9F0] hover:border-[#0B96AC] transition-colors group rounded-sm shadow-sm"
+                >
+                  <div className="mb-8">
+                    <item.icon className="w-6 h-6 text-[#0B96AC] group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-[18px] font-bold mb-4 text-[#1A1A1A] tracking-tight">{item.title}</h3>
+                  <p className="text-[#595959] text-[14px] leading-relaxed mb-10 font-medium">{item.desc}</p>
+                  
+                  <div className="pt-8 border-t border-slate-200 flex justify-between gap-4">
+                    {item.stats.map((s, i) => (
+                      <div key={i}>
+                        <p className="text-[9px] font-bold text-[#8E99AF] tracking-widest mb-1 uppercase">{s.label}</p>
+                        <p className="text-[12px] font-bold text-[#1A1A1A]">{s.val}</p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* --- 4. Mass Production Section --- */}
       <section className="bg-[#122A30] py-20 text-white">
         <div className="w-full px-8 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div>
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-[28px] font-bold tracking-tight mb-10 text-white leading-tight">Mass Production Without Compromise.</h2>
             <div className="space-y-10">
               <div className="flex gap-8">
@@ -194,19 +216,25 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="grid grid-cols-2 gap-6">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-2 gap-6"
+          >
             <img 
               src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" 
               alt="Laser Cutting" 
-              className="w-full h-[450px] object-cover rounded-sm shadow-2xl"
+              className="w-full h-[450px] object-cover rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
             />
             <img 
               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" 
               alt="Quality Control" 
-              className="w-full h-[450px] object-cover rounded-sm shadow-2xl"
+              className="w-full h-[450px] object-cover rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 mt-12"
             />
-          </div>
+          </motion.div>
         </div>
       </section>
 
