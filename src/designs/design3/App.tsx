@@ -10,10 +10,16 @@ import Gallery from './pages/Gallery';
 import Career from './pages/Career';
 import Contact from './pages/Contact';
 
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import ScrollToTop from './components/common/ScrollToTop';
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="min-h-screen bg-white text-slate-900 flex flex-col font-['Outfit'] selection:bg-slate-900 selection:text-white">
+        <Header />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -26,6 +32,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );
